@@ -121,6 +121,47 @@ export interface Database {
         };
         Relationships: [];
       };
+      job_opportunities: {
+        Row: {
+          id: string;
+          profile_id: string;
+          url: string;
+          title: string;
+          company: string;
+          signals: string[];
+          required_years_experience: number;
+          prioritized_acronyms: string[];
+          raw_text: string;
+          status: string;
+          extracted_at: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          profile_id: string;
+          url: string;
+          title: string;
+          company?: string;
+          signals?: string[];
+          required_years_experience?: number;
+          prioritized_acronyms?: string[];
+          raw_text?: string;
+          status?: string;
+          extracted_at?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          title?: string;
+          company?: string;
+          signals?: string[];
+          required_years_experience?: number;
+          prioritized_acronyms?: string[];
+          raw_text?: string;
+          status?: string;
+          extracted_at?: string | null;
+        };
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: Record<string, never>;
@@ -134,3 +175,4 @@ export type Profile    = Database["public"]["Tables"]["profiles"]["Row"];
 export type Experience = Database["public"]["Tables"]["experiences"]["Row"];
 export type Project    = Database["public"]["Tables"]["projects"]["Row"];
 export type Skill      = Database["public"]["Tables"]["skills"]["Row"];
+export type JobOpportunity = Database["public"]["Tables"]["job_opportunities"]["Row"];
