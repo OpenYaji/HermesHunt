@@ -23,6 +23,7 @@ export interface Database {
           email?: string | null;
           updated_at?: string;
         };
+        Relationships: [];
       };
       experiences: {
         Row: {
@@ -64,6 +65,7 @@ export interface Database {
           sort_order?: number;
           updated_at?: string;
         };
+        Relationships: [];
       };
       projects: {
         Row: {
@@ -96,6 +98,7 @@ export interface Database {
           url?: string | null;
           sort_order?: number;
         };
+        Relationships: [];
       };
       skills: {
         Row: {
@@ -116,8 +119,13 @@ export interface Database {
           name?: string;
           category?: string;
         };
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
 }
 
